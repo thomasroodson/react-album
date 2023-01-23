@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { api } from "./http/api";
 import { Loading } from "./components/Loading";
 import { Sidebar } from "./components/Sidebar";
+import { PhotoItem } from "./components/Photo";
+
+import { Photo } from "./types/Photo";
 
 const App = () => {
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const [loading, setLoading] = useState(false);
 
   const loadPhotos = async () => {
@@ -12,7 +15,9 @@ const App = () => {
       setLoading(true);
       let json = await api.getAllPhotos();
       setPhotos(json);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (err) {}
   };
 
@@ -31,9 +36,9 @@ const App = () => {
             </div>
           )}
           {!loading && photos.length > 0 && (
-            <div className="grid grid-cols-5 gap-4 px-8">
+            <div className="grid grid-cols-4 2xl:grid-cols-5 grid-rows-3 px-8">
               {photos.map((item, index) => (
-                <div className="text-center">oi</div>
+                <PhotoItem key={index} data={item} />
               ))}
             </div>
           )}
