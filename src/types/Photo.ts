@@ -2,13 +2,13 @@ export type Photo = {
   id: string;
   created_at: string;
   updated_at: string;
-  promoted_at: null;
-  width: 5438;
-  height: 3625;
+  promoted_at: any;
+  width: number;
+  height: number;
   color: string;
   blur_hash: string;
-  description: null;
-  alt_description: null;
+  description: any;
+  alt_description: any;
   urls: {
     raw: string;
     full: string;
@@ -23,11 +23,11 @@ export type Photo = {
     download: string;
     download_location: string;
   };
-  likes: 211;
-  liked_by_user: false;
+  likes: number;
+  liked_by_user: boolean;
   current_user_collections: [];
   sponsorship: {
-    impression_urls: [string, string, string];
+    impression_urls: string;
     tagline: string;
     tagline_url: string;
     sponsor: {
@@ -36,11 +36,11 @@ export type Photo = {
       username: string;
       name: string;
       first_name: string;
-      last_name: null;
+      last_name: any;
       twitter_username: string;
       portfolio_url: string;
       bio: string;
-      location: null;
+      location: any;
       links: {
         self: string;
         html: string;
@@ -56,16 +56,16 @@ export type Photo = {
         large: string;
       };
       instagram_username: string;
-      total_collections: 0;
-      total_likes: 19;
-      total_photos: 13;
-      accepted_tos: true;
-      for_hire: false;
+      total_collections: number;
+      total_likes: number;
+      total_photos: number;
+      accepted_tos: boolean;
+      for_hire: boolean;
       social: {
-        instagram_username: "mailchimp";
-        portfolio_url: "https://mailchimp.com/";
-        twitter_username: "Mailchimp";
-        paypal_email: null;
+        instagram_username: string;
+        portfolio_url: string;
+        twitter_username: string;
+        paypal_email: any;
       };
     };
   };
@@ -76,19 +76,19 @@ export type Photo = {
     username: string;
     name: string;
     first_name: string;
-    last_name: null;
+    last_name: any;
     twitter_username: string;
     portfolio_url: string;
     bio: string;
-    location: null;
+    location: any;
     links: {
-      self: "https://api.unsplash.com/users/mailchimp";
-      html: "https://unsplash.com/fr/@mailchimp";
-      photos: "https://api.unsplash.com/users/mailchimp/photos";
-      likes: "https://api.unsplash.com/users/mailchimp/likes";
-      portfolio: "https://api.unsplash.com/users/mailchimp/portfolio";
-      following: "https://api.unsplash.com/users/mailchimp/following";
-      followers: "https://api.unsplash.com/users/mailchimp/followers";
+      self: string;
+      html: string;
+      photos: string;
+      likes: string;
+      portfolio: string;
+      following: string;
+      followers: string;
     };
     profile_image: {
       small: string;
@@ -96,16 +96,16 @@ export type Photo = {
       large: string;
     };
     instagram_username: string;
-    total_collections: 0;
-    total_likes: 19;
-    total_photos: 13;
-    accepted_tos: true;
-    for_hire: false;
+    total_collections: number;
+    total_likes: number;
+    total_photos: number;
+    accepted_tos: boolean;
+    for_hire: boolean;
     social: {
       instagram_username: string;
       portfolio_url: string;
       twitter_username: string;
-      paypal_email: null;
+      paypal_email: string;
     };
   };
 };
