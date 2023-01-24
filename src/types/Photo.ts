@@ -25,9 +25,12 @@ export type Photo = {
   };
   likes: number;
   liked_by_user: boolean;
-  current_user_collections: any;
+  current_user_collections: [];
   sponsorship: {
-    impression_urls: {
+    impression_urls: string;
+    tagline: string;
+    tagline_url: string;
+    sponsor: {
       id: string;
       updated_at: string;
       username: string;
@@ -102,7 +105,7 @@ export type Photo = {
       instagram_username: string;
       portfolio_url: string;
       twitter_username: string;
-      paypal_email: any;
+      paypal_email: string;
     };
   };
 };
